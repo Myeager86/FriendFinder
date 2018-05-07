@@ -4,40 +4,34 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FriendFinder</title>
-
-  <!-- Latest compiled and minified CSS & JS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <!-- I used a bit of help getting started with my HTML and these were all chosen by the instuctros when creting 
+  the example, so I copied that and brought it into my code in the interest of best practices.  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-  <!-- Font Awesome Glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-
-  <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-
+  <title>FriendFinder Survey</title>
 </head>
 
-<body>
+<body style="background-image: url(https://cdn.pixabay.com/photo/2017/08/19/10/31/background-2658006_1280.png)">
 
   <div class="container">
 
-    <h2>Survey Questions</h2>
+    <h2 style="text-align: center">Your FriendFinder Questions!</h2>
     <hr>
 
-    <h3><strong>About You</strong></h3>
-    <h4>Name (Required)</h4>
+    <h3 style="text-align: center"><strong>About You</strong></h3>
+    <h4 style="text-align: center">Name (Ie: John Smith)</h4>
     <input type="text" id="name" class="form-control" required>
-
-    <!-- <h4>Link to Photo Image (Required)</h4>
-    <input type="text" id="photo" class="form-control" required> -->
 
     <hr>
 
     <h3><strong>Question 1</strong></h3>
-    <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+    <h4>You quickly make friends in new situations.</h4>
     <select class="chosen-select" id="q1">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -48,7 +42,7 @@
     </select>
 
     <h3><strong>Question 2</strong></h3>
-    <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+    <h4>You would prefer to socialize rather than spend time alone.</h4>
     <select class="chosen-select" id="q2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -60,7 +54,7 @@
 
 
     <h3><strong>Question 3</strong></h3>
-    <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+    <h4>Mutitasking comes naturally to you.</h4>
     <select class="chosen-select" id="q3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -72,7 +66,7 @@
 
 
     <h3><strong>Question 4</strong></h3>
-    <h4>You rarely do something just out of sheer curiosity.</h4>
+    <h4>You prefer to spend your time with like minded people.</h4>
     <select class="chosen-select" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -84,7 +78,7 @@
 
 
     <h3><strong>Question 5</strong></h3>
-    <h4>People can rarely upset you.</h4>
+    <h4>You prefer to spend your time with people who share differinfg views than your own on a variety of subjects.</h4>
     <select class="chosen-select" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -96,7 +90,7 @@
 
 
     <h3><strong>Question 6</strong></h3>
-    <h4>It is often difficult for you to relate to other people’s feelings.</h4>
+    <h4>You inately understand peoples emotions, you are not suroprised when someone laughs or cries.</h4>
     <select class="chosen-select" id="q6">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -108,7 +102,7 @@
 
 
     <h3><strong>Question 7</strong></h3>
-    <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+    <h4>People can trust you.</h4>
     <select class="chosen-select" id="q7">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -119,7 +113,7 @@
     </select>
 
     <h3><strong>Question 8</strong></h3>
-    <h4>You rarely get carried away by fantasies and ideas.</h4>
+    <h4>You prefer to spend time in your own fantasy world, rather than the real world.</h4>
     <select class="chosen-select" id="q8">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -130,7 +124,7 @@
     </select>
 
     <h3><strong>Question 9</strong></h3>
-    <h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+    <h4>You feel that you can trust your own judgements on most things.</h4>
     <select class="chosen-select" id="q9">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -141,7 +135,7 @@
     </select>
 
     <h3><strong>Question 10</strong></h3>
-    <h4>You feel more energetic after spending time with a group of people.</h4>
+    <h4>Spending time alone allows you to recharge.</h4>
     <select class="chosen-select" id="q10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
@@ -154,9 +148,8 @@
     <br>
     <br>
 
-    <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
-     Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg" id="submit"><i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i>
+     Save answers and see resutls!</button>
 
     <hr>
     <footer class="footer">
@@ -178,8 +171,8 @@
           <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
-          <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          <h2 id="bestMatch"></h2>
+          <h3>Is your best match! You should become friends right away!</h3>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -190,33 +183,18 @@
   </div>
 
   <script type="text/javascript">
-    // Chosen CSS
-    var config = {
-      ".chosen-select": {},
-      ".chosen-select-deselect": {
-        allow_single_deselect: true
-      },
-      ".chosen-select-no-single": {
-        disable_search_threshold: 10
-      },
-      ".chosen-select-no-results": {
-        no_results_text: "Oops, nothing found!"
-      },
-      ".chosen-select-width": {
-        width: "95%"
-      }
-    };
-
+    // The example code had some CSS config's here, I could understand how it works, but I don't know how to write it myself so I am not using it
+  
     for (var selector in config) {
       $(selector).chosen(config[selector]);
     }
 
-    // Capture the form inputs
+    // Hitting submit will get save the answers, it also runs all the code below
     $("#submit").on("click", function(event) {
       event.preventDefault();
 
-      // Form validation
-      function validateForm() {
+      // This runs through and makes sure all the fields are filled out
+      function isValid() {
         var isValid = true;
         $(".form-control").each(function() {
           if ($(this).val() === "") {
@@ -233,12 +211,11 @@
         return isValid;
       }
 
-      // If all required fields are filled
-      if (validateForm()) {
-        // Create an object for the user"s data
-        var userData = {
+      // This runs IF the fields are all filled out
+      if (isValid()) {
+        // Saves the users data as an object
+        var savedMatchData = {
           name: $("#name").val(),
-          // photo: $("#photo").val(),
           scores: [
             $("#q1").val(),
             $("#q2").val(),
@@ -253,19 +230,15 @@
           ]
         };
 
-        // AJAX post the data to the friends API.
         $.post("/api/friends", userData, function(data) {
-
-          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-          $("#match-name").text(data.name);
-          // $("#match-img").attr("src", data.photo);
+          $("#bestMatch").text(data.name);
 
           // Show the modal with the best match
           $("#results-modal").modal("toggle");
 
         });
       } else {
-        alert("Please fill out all fields before submitting!");
+        alert("You are missing some answers and/or your name, please go back and fix this!");
       }
     });
   </script>
