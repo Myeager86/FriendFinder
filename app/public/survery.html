@@ -26,13 +26,13 @@
 
     <h3 style="text-align: center"><strong>About You</strong></h3>
     <h4 style="text-align: center">Name (Ie: John Smith)</h4>
-    <input type="text" id="name" class="form-control" required>
+    <input type="text" id="userName" class="form-control" required>
 
     <hr>
 
     <h3><strong>Question 1</strong></h3>
     <h4>You quickly make friends in new situations.</h4>
-    <select class="chosen-select" id="q1">
+    <select class="chosen-select" id="question1">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -43,7 +43,7 @@
 
     <h3><strong>Question 2</strong></h3>
     <h4>You would prefer to socialize rather than spend time alone.</h4>
-    <select class="chosen-select" id="q2">
+    <select class="chosen-select" id="question2">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -55,7 +55,7 @@
 
     <h3><strong>Question 3</strong></h3>
     <h4>Mutitasking comes naturally to you.</h4>
-    <select class="chosen-select" id="q3">
+    <select class="chosen-select" id="question3">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -67,7 +67,7 @@
 
     <h3><strong>Question 4</strong></h3>
     <h4>You prefer to spend your time with like minded people.</h4>
-    <select class="chosen-select" id="q4">
+    <select class="chosen-select" id="question4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -79,7 +79,7 @@
 
     <h3><strong>Question 5</strong></h3>
     <h4>You prefer to spend your time with people who share differinfg views than your own on a variety of subjects.</h4>
-    <select class="chosen-select" id="q5">
+    <select class="chosen-select" id="question5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -91,7 +91,7 @@
 
     <h3><strong>Question 6</strong></h3>
     <h4>You inately understand peoples emotions, you are not suroprised when someone laughs or cries.</h4>
-    <select class="chosen-select" id="q6">
+    <select class="chosen-select" id="question6">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -103,7 +103,7 @@
 
     <h3><strong>Question 7</strong></h3>
     <h4>People can trust you.</h4>
-    <select class="chosen-select" id="q7">
+    <select class="chosen-select" id="question7">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -114,7 +114,7 @@
 
     <h3><strong>Question 8</strong></h3>
     <h4>You prefer to spend time in your own fantasy world, rather than the real world.</h4>
-    <select class="chosen-select" id="q8">
+    <select class="chosen-select" id="question8">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -125,7 +125,7 @@
 
     <h3><strong>Question 9</strong></h3>
     <h4>You feel that you can trust your own judgements on most things.</h4>
-    <select class="chosen-select" id="q9">
+    <select class="chosen-select" id="question9">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -136,7 +136,7 @@
 
     <h3><strong>Question 10</strong></h3>
     <h4>Spending time alone allows you to recharge.</h4>
-    <select class="chosen-select" id="q10">
+    <select class="chosen-select" id="question10">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
@@ -161,7 +161,7 @@
   </div>
 
   <!-- Modal -->
-  <div id="results-modal" class="modal fade" role="dialog">
+  <div id="resultsMod" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -185,9 +185,9 @@
   <script type="text/javascript">
     // The example code had some CSS config's here, I could understand how it works, but I don't know how to write it myself so I am not using it
   
-    for (var selector in config) {
-      $(selector).chosen(config[selector]);
-    }
+    // for (var selector in config) {
+    //   $(selector).chosen(config[selector]);
+    // }
 
     // Hitting submit will get save the answers, it also runs all the code below
     $("#submit").on("click", function(event) {
@@ -215,26 +215,25 @@
       if (isValid()) {
         // Saves the users data as an object
         var bestMatchData = {
-          name: $("#name").val(),
+          name: $("#userName").val(),
           scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
+            $("#question1").val(),
+            $("#question2").val(),
+            $("#question3").val(),
+            $("#question4").val(),
+            $("#question5").val(),
+            $("#question6").val(),
+            $("#question7").val(),
+            $("#question8").val(),
+            $("#question9").val(),
+            $("#question10").val()
           ]
         };
 
-        $.post("/api/friends", userData, function(data) {
+        $.post("/api/friends", bestMatchData, function(data) {
           $("#bestMatch").text(data.name);
 
-          // Show the modal with the best match
-          $("#results-modal").modal("toggle");
+          $("#resultsMod").modal("toggle");
 
         });
       } else {
