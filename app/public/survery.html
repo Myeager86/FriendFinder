@@ -6,15 +6,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <!-- I used a bit of help getting started with my HTML and these were all chosen by the instuctros when creting 
-  the example, so I copied that and brought it into my code in the interest of best practices.  -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- JQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
+  <!--JS Bootstrap for the modal -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <!-- Loading AJAX -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
   <title>FriendFinder Survey</title>
+  
 </head>
 
 <body style="background-image: url(https://cdn.pixabay.com/photo/2017/08/19/10/31/background-2658006_1280.png)">
@@ -30,6 +33,7 @@
 
     <hr>
 
+    <!-- I couldn't decide how to format the questions, so I looked at how the example did it -->
     <h3><strong>Question 1</strong></h3>
     <h4>You quickly make friends in new situations.</h4>
     <select class="chosen-select" id="question1">
@@ -152,6 +156,7 @@
      Save answers and see resutls!</button>
 
     <hr>
+    <!-- Footer to display the api/friends and github repo -->
     <footer class="footer">
       <div class="container">
         <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/Myeager86/FriendFinder">GitHub Repo</a></p>
@@ -160,11 +165,10 @@
 
   </div>
 
-  <!-- Modal -->
+  <!-- Modal, copied and adapted from code I found online -->
   <div id="resultsMod" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
-      <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -183,11 +187,6 @@
   </div>
 
   <script type="text/javascript">
-    // The example code had some CSS config's here, I could understand how it works, but I don't know how to write it myself so I am not using it
-  
-    // for (var selector in config) {
-    //   $(selector).chosen(config[selector]);
-    // }
 
     // Hitting submit will get save the answers, it also runs all the code below
     $("#submit").on("click", function(event) {
@@ -230,6 +229,7 @@
           ]
         };
 
+        // this used the post route to put the data on the page, works with the server post route I establised on server.js
         $.post("/api/friends", bestMatchData, function(data) {
           $("#bestMatch").text(data.name);
 
